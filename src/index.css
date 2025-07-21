@@ -1,0 +1,198 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #dbeafe, #f0fdf4, #fef9c3);
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.page-background {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+header {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #333;
+    width: 100%;
+}
+
+.table-dark {
+    background-color: #333 !important;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.btn-success {
+    background-color: #27ae60 !important;
+    border: none;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #219150 !important;
+}
+
+.btn-info {
+    background-color: #3498db !important;
+    border: none;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #258cd1 !important;
+}
+
+.btn-danger {
+    background-color: #e74c3c !important;
+    border: none;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b !important;
+}
+
+input.form-control:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.button-group .btn {
+    flex: 1 1 auto;
+    min-width: 100px;
+}
+
+
+/* ✅ Table action buttons: Edit/Delete */
+
+td .btn {
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.75rem;
+}
+
+td .btn:last-child {
+    margin-right: 0;
+}
+
+
+/* ✅ NEW: Make forms & buttons responsive */
+
+@media (max-width: 768px) {
+    .glass-card {
+        padding: 1rem;
+    }
+    .table {
+        display: block;
+        overflow-x: auto;
+    }
+    .button-group {
+        flex-direction: column;
+    }
+    .button-group .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .d-flex.justify-content-between button {
+        width: 100%;
+    }
+    /* 👉 Table action buttons mobile: full width & spacing */
+    td .btn {
+        display: block;
+        width: 100%;
+        margin: 0.3rem 0;
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+
+/* ✅ Form container adjust on extra small screens */
+
+@media (max-width: 576px) {
+    .glass-card {
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+    header {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    .footer {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
+
+
+/* ✅ Ensure .d-flex.justify-content-between works by default too */
+
+.d-flex.justify-content-between {
+    gap: 0.75rem;
+}
+
+.d-flex.justify-content-between button {
+    /* Only affects default if needed, else mobile media query handles it */
+}
