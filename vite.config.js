@@ -3,5 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
     plugins: [react()],
-    base: '/', // ✅ Fixes asset paths on Netlify!
+    build: {
+        rollupOptions: {
+            external: ['react-icons/fa'],
+        },
+    },
 })
